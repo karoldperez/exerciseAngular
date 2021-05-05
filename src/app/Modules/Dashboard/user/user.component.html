@@ -1,0 +1,16 @@
+<a routerLink="/user/{{user.id}}" class="card mb-4 text-decoration-none">
+  <div class="card-body border border-primary rounded shadow">
+    <div class="row">
+      <div class="col-4">
+        <img src="https://i.pinimg.com/originals/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-8 text-dark">
+        <h5 class="text-end m-0 fw-bold">{{user.name}}</h5>
+        <h6 class="text-end m-0">{{user.email}}</h6>
+        <p class="text-end m-0">{{user.phone}}</p>
+        <hr>
+        <h6 class="text-end m-0 fw-bold text-primary">{{user.website}}</h6>
+      </div>
+    </div>
+  </div>
+</a>

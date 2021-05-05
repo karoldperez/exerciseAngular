@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <h3 class="mt-4 fw-bold text-primary">Usuarios...</h3>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6 col-lg-4" *ngFor="let user of _users.usersList">
+      <app-user [user]="user"></app-user>
+    </div>
+  </div>
+</div>

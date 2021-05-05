@@ -1,0 +1,32 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card text-center border border-primary rounded shadow-lg">
+    <div class="card-header">
+      <h4>Inicio de sesión</h4>
+    </div>
+    <div class="card-body">
+      <form class="mx-5 my-3" autocomplete="off" [formGroup]="user" (ngSubmit)="validarLogin()">
+        <div class="mb-2">
+          <input placeholder="Usuario" type="text"
+            [ngClass]="(user.controls['usuario'].valid && user.controls['usuario'].touched) ? 'border-success': 'text-danger'"
+            [formControl]="user.controls.usuario" class="form-control form-control-lg" id="usuario"
+            aria-describedby="emailHelp">
+          <small *ngIf="!user.controls['usuario'].valid && user.controls['usuario'].touched"
+            class="text-danger fw-bold">Digite un usuario correcto</small>
+        </div>
+        <div class="mb-4">
+          <input placeholder="Contraseña"
+            [ngClass]="user.controls['clave'].valid && user.controls['clave'].touched ? 'border-success': 'text-danger'"
+            formControlName="clave" type="password" class="form-control form-control-lg" id="clave">
+          <small *ngIf="!user.controls['clave'].valid && user.controls['clave'].touched"
+            class="text-danger fw-bold">Digite una contraseña
+            correcta</small>
+        </div>
+        <button [disabled]="!user.valid" type="submit" class="btn btn-primary col-12 btn-lg">Ingresar</button>
+      </form>
+    </div>
+    <div class="card-footer alert-{{ this._auth.alerta.color}}">
+      <h5>{{ this._auth.alerta.message}}</h5>
+    </div>
+  </div>
+
+</div>
